@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Campo para el logo de la institución -->
+        <div class="header">
+            <img src="{{ url_for('static', filename='img/logo4.png') }}" alt="Logo de la Institución" class="logo">
+            <h1>Bienvenido al Portal Web</h1>
+        </div>
+        <!-- Contenedor de botones -->
+        <div class="button-container">
+            <a href="/login" class="btn">Login</a>
+            <a href="/register" class="btn">Registro</a>
+        </div>
+        <!-- Información adicional -->
+        <div class="info-container">
+            <p>Gestión: 2024</p>
+            <p>Nombre del Docente: M. Sc. Mario Torrez C.</p>
+            <p>Nombre de la Materia: Tecnologias emergentes 2</p>
+            <p>Alumnos:</p>
+            <ul>
+                <li>Gonzalo Cahuaya Alejo</li>
+                <li>Juan Carlos Roque Yucra</li>
+                <li>Maycon Apaza Condori</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

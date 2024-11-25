@@ -1,0 +1,145 @@
+/* Estilo del cuerpo */
+body {
+    font-family: 'Helvetica Neue', sans-serif; /* Fuente del texto */
+    background: linear-gradient(135deg, #e9ecef, #f8f9fa); /* Fondo degradado */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin relleno */
+    display: flex; /* Usar flexbox para el diseño */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Altura de la ventana */
+    color: #333; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+}
+
+
+
+/* Estilo del título h1 */
+h1 {
+    font-size: 2.5rem; /* Tamaño de fuente */
+    color: #333; /* Color del texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra del texto */
+}
+
+/* Contenedor principal del formulario */
+.container {
+    background-color: #fff; /* Color de fondo */
+    padding: 30px; /* Relleno interno */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: 100%;
+    max-width: 400px; /* Ancho máximo */
+    position: relative; /* Posición relativa */
+}
+
+/* Estilo del contenedor del formulario */
+.register-container {
+    background: #fff; /* Color de fondo */
+    padding: 20px; /* Relleno interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilo del grupo de formulario */
+.form-group {
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: left; /* Alineación izquierda */
+}
+
+/* Estilo del label de entrada */
+.form-group label {
+    display: block; /* Mostrar como bloque */
+    margin-bottom: 5px; /* Espacio inferior */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo del grupo de entrada */
+.input-group {
+    display: flex; /* Usar flexbox para el diseño */
+    align-items: center; /* Alinear elementos en el centro */
+    position: relative; /* Posición relativa */
+}
+
+/* Estilo del icono de entrada */
+.input-icon {
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* A la mitad */
+    left: 10px; /* A la izquierda */
+    transform: translateY(-50%); /* Centrar verticalmente */
+    color: #007bff; /* Color del icono */
+}
+
+/* Estilo para entradas de texto y contraseña */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Ancho completo */
+    padding: 12px 40px; /* Relleno interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.1); /* Sombra interna */
+    outline: none; /* Sin contorno */
+    transition: border-color 0.3s; /* Transición en el color del borde */
+}
+
+/* Estilo para entradas enfocadas */
+input:focus {
+    border-color: #007bff; /* Color del borde en foco */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25); /* Sombra en foco */
+}
+
+/* Estilo del toggle de contraseña */
+.toggle-password {
+    position: absolute; /* Posición absoluta */
+    right: 10px; /* A la derecha */
+    top: 50%; /* A la mitad */
+    transform: translateY(-50%); /* Centrar verticalmente */
+    cursor: pointer; /* Cursor de puntero */
+    color: #007bff; /* Color del toggle */
+}
+
+/* Estilo de los botones */
+.form-buttons {
+    display: flex; /* Usar flexbox para el diseño */
+    justify-content: space-between; /* Distribuir espacio entre botones */
+    align-items: center; /* Alinear elementos en el centro */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.btn {
+    background-color: #007bff; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 12px 20px; /* Relleno interno */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s, transform 0.3s; /* Transición en el color y la transformación */
+    width: 48%; /* Ancho del botón */
+}
+
+/* Estilo hover de los botones */
+.btn:hover {
+    background-color: #0056b3; /* Color de fondo en hover */
+    transform: translateY(-2px); /* Mover hacia arriba en hover */
+}
+
+/* Estilo del botón de cancelar */
+.cancel-btn {
+    background-color: #dc3545; /* Color de fondo */
+}
+
+/* Estilo hover del botón de cancelar */
+.cancel-btn:hover {
+    background-color: #c82333; /* Color de fondo en hover */
+}
+
+/* Estilo del mensaje de error */
+.error-message {
+    display: none; /* No mostrar por defecto */
+    color: #ff0000; /* Color del texto */
+    margin-top: 10px; /* Espacio superior */
+    background-color: #f8d7da; /* Color de fondo */
+    padding: 10px; /* Relleno interno */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 1px solid #f5c6cb; /* Borde */
+}

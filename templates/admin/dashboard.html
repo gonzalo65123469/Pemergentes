@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra lateral de navegación -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="/productos"><i class="fas fa-box"></i> Productos</a></li>
+            <li><a href="/ventas"><i class="fas fa-shopping-cart"></i> Ventas</a></li>
+            <li><a href="/reportes"><i class="fas fa-chart-line"></i> Reportes</a></li>
+            <li><a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="content">
+        <h1>Bienvenido, {{ session['user_id'] }}</h1>
+        
+        <!-- Grid del dashboard -->
+        <div class="dashboard-grid">
+            <!-- Productos con bajo stock -->
+            <div class="dashboard-card">
+                <h3>Stock Bajo</h3>
+                <ul>
+                    {% for producto in productos_bajo_stock %}
+                        <li>{{ producto['nombre'] }}: {{ producto['stock'] }} unidades</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <!-- Ventas recientes -->
+            <div class="dashboard-card">
+                <h3>Ventas Recientes</h3>
+                <ul>
+                    {% for venta in ventas_recientes %}
+                        <li>{{ venta['nombre'] }}: {{ venta['cantidad'] }} ventas</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <!-- Productos más vendidos -->
+            <div class="dashboard-card">
+                <h3>Productos Más Vendidos</h3>
+                <ul>
+                    {% for producto in productos_mas_vendidos %}
+                        <li>{{ producto['nombre'] }}: {{ producto['total_vendido'] }} unidades</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Acciones del dashboard -->
+        <div class="actions">
+            <a href="/productos/agregar" class="btn btn-blue"><i class="fas fa-plus-circle"></i> Agregar Producto</a>
+            <a href="/ventas/registrar" class="btn btn-green"><i class="fas fa-cash-register"></i> Registrar Venta</a>
+        </div>
+    </div>
+</body>
+</html>
