@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Editar Venta</h2>
+    
+    <form action="{{ url_for('main.editar_venta', id_detalle=detalle.id_detalle) }}" method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="producto" class="form-label">Producto</label>
+            <input type="text" id="producto" class="form-control" value="{{ detalle.producto }}" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="cantidad_actual" class="form-label">Cantidad Actual</label>
+            <input type="number" id="cantidad_actual" class="form-control" value="{{ detalle.cantidad }}" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label for="nueva_cantidad" class="form-label">Nueva Cantidad</label>
+            <input type="number" name="nueva_cantidad" id="nueva_cantidad" class="form-control" min="1" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Actualizar Venta</button>
+        <a href="{{ url_for('main.ventas') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

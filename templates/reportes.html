@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Venta Inventario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Reportes de Venta Inventario</h1>
+
+        <!-- Filtros -->
+        <div class="row">
+            <div class="col-12">
+                <form method="POST" action="/reportes">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="filtro">Seleccione el periodo</label>
+                            <select name="filtro" id="filtro" class="form-control">
+                                <option value="semana">Semana</option>
+                                <option value="mes" selected>Mes</option>
+                                <option value="año">Año</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary mt-4">Filtrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="row mt-5">
+            <div class="col-12 col-md-4">
+                <h3>Total de Ventas</h3>
+                <p>${{ total_ventas }}</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <h3>Ventas Realizadas</h3>
+                <p>{{ num_ventas }}</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <h3>Producto Más Vendido</h3>
+                <p>{{ producto_mas_vendido }}</p>
+            </div>
+        </div>
+
+        <!-- Gráficos -->
+        <div class="row mt-5">
+            <div class="col-12 col-md-6">
+                <h3>Gráfico de Barras Verticales</h3>
+                <canvas id="bar-chart-vertical"></canvas>
+            </div>
+            <div class="col-12 col-md-6">
+                <h3>Gráfico Circular</h3>
+                <canvas id="pie-chart"></canvas>
+            </div>
+        </div>
+
+        <!-- Botones de Exportación -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <a href="/exportar/excel" class="btn btn-success">Exportar a Excel</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Datos de los gráficos
+        const data = {
+            labels: ["Producto A", "Producto B", "Producto C", "Producto D"],
+            datasets: [{
+                label: "Ventas",
+                data: [30, 40, 20, 10],
+                backgroundColor: ['#ff6347', '#36a2eb', '#ffce56', '#4caf50'],
+                borderColor: ['#ff6347', '#36a2eb', '#ffce56', '#4caf50'],
+                borderWidth: 1
+            }]
+        };
+
+        // Gráfico de barras verticales
+        new Chart(document.getElementById('bar-chart-vertical'), {
+            type: 'bar',
+            data: data,
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfico circular
+        new Chart(document.getElementById('pie-chart'), {
+            type: 'pie',
+            data: data
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Gestión de Ventas</h2>
+    
+    <!-- Botón para registrar una nueva venta -->
+    <div class="text-end mb-3">
+        <a href="{{ url_for('main.registrar_venta') }}" class="btn btn-primary">
+            Registrar Nueva Venta
+        </a>
+    </div>
+
+    <!-- Tabla de Ventas -->
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Fecha</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venta in ventas %}
+                <tr>
+                    <td>{{ venta.id_venta }}</td>
+                    <td>{{ venta.fecha }}</td>
+                    <td>{{ venta.producto }}</td>
+                    <td>{{ venta.cantidad }}</td>
+                    <td>{{ venta.precio_unitario }}</td>
+                    <td>{{ venta.subtotal }}</td>
+                    <td>
+                        <a href="{{ url_for('main.editar_venta', id_detalle=venta.id_detalle) }}" class="btn btn-sm btn-warning">
+                            Editar
+                        </a>
+                        <form action="{{ url_for('main.eliminar_venta', id_venta=venta.id_venta) }}" method="POST" style="display: inline-block;">
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Seguro que deseas eliminar esta venta?')">
+                                Eliminar
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" class="text-center">No hay ventas registradas.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -6,7 +6,7 @@ def get_connection():
         host='localhost',
         user='root',
         password='',
-        database='Tienda'
+        database='tienda'
     )
 
 def init_mysql_db():

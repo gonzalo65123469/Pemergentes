@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Registrar Nueva Venta</h2>
+    
+    <form action="{{ url_for('main.registrar_venta') }}" method="POST" class="mt-4">
+        <div class="mb-3">
+            <label for="producto" class="form-label">Producto</label>
+            <select name="producto" id="producto" class="form-select" required>
+                <option value="" disabled selected>Seleccione un producto</option>
+                {% for producto in productos %}
+                <option value="{{ producto.id_producto }}">{{ producto.nombre }} (Stock: {{ producto.stock }})</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input type="number" name="cantidad" id="cantidad" class="form-control" min="1" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Registrar Venta</button>
+        <a href="{{ url_for('main.ventas') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

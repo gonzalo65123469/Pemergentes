@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #e0e0e0, #ffffff);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #f7f9fc;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Form Styles */
+.registro-venta {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(to right, #ffffff, #f3f4f7);
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #7aa9ff;
+    box-shadow: 0 4px 10px rgba(120, 170, 255, 0.5);
+    outline: none;
+}
+
+.btn-agregar {
+    background: linear-gradient(to right, #4CAF50, #43A047);
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-agregar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(76, 175, 80, 0.5);
+}
+
+/* Table Styles */
+.ventas-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ventas-table thead {
+    background: #4CAF50;
+    color: white;
+}
+
+.ventas-table th, .ventas-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.ventas-table tr:nth-child(even) {
+    background: #f3f3f3;
+}
+
+.ventas-table tr:hover {
+    background: #f1f7ff;
+    cursor: pointer;
+}
+
+/* Action Buttons */
+.action-form {
+    display: inline-block;
+}
+
+.btn-edit {
+    background: linear-gradient(to right, #2196F3, #1E88E5);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-edit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(33, 150, 243, 0.5);
+}
+
+.btn-delete {
+    background: linear-gradient(to right, #F44336, #E53935);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(244, 67, 54, 0.5);
+}
